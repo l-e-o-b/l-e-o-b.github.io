@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Léo Bouyat, video game developer</title>
+<meta name="description" content="Portfolio of Léo Bouyat, second-year bachelor student in video game development at Gaming Campus: C++, C# and Unity projects, skills, background and contact.">
+<meta name="author" content="Léo Bouyat">
+<meta name="google-site-verification" content="NtH5r9iquvVoUsUyQ5xBBKAprVCbqKxtdhewq1D-thQ" />
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a1740">
+<link rel="canonical" href="https://l-e-o-b.github.io/en.html">
+<link rel="alternate" hreflang="fr" href="https://l-e-o-b.github.io/">
+<link rel="alternate" hreflang="en" href="https://l-e-o-b.github.io/en.html">
+<link rel="alternate" hreflang="x-default" href="https://l-e-o-b.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240'%3E%3Cpath d='M100 8L184 34V118C184 176 148 216 100 234C52 216 16 176 16 118V34Z' fill='%23c23b22' stroke='%23e0b24a' stroke-width='12'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Léo Bouyat">
+<meta property="og:title" content="Léo Bouyat, video game developer">
+<meta property="og:description" content="Portfolio of Léo Bouyat, second-year bachelor student in video game development at Gaming Campus: C++, C# and Unity projects, skills, background and contact.">
+<meta property="og:url" content="https://l-e-o-b.github.io/en.html">
+<meta property="og:image" content="https://l-e-o-b.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Léo Bouyat, video game developer">
+<meta name="twitter:description" content="Portfolio of Léo Bouyat, second-year bachelor student in video game development at Gaming Campus: C++, C# and Unity projects, skills, background and contact.">
+<meta name="twitter:image" content="https://l-e-o-b.github.io/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Léo Bouyat","jobTitle":"Video game development student","url":"https://l-e-o-b.github.io/en.html","image":"https://l-e-o-b.github.io/og.jpg","address":{"@type":"PostalAddress","addressLocality":"Triel-sur-Seine","addressCountry":"FR"},"alumniOf":{"@type":"EducationalOrganization","name":"Gaming Campus"},"knowsAbout":["C++","C#","Unity","SFML","Video game development"],"sameAs":["https://github.com/l-e-o-b","https://www.linkedin.com/in/leo-bouyat-08b264386"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=UnifrakturCook:wght@700&display=swap">
+<style>
+/* Concept : un manuscrit enluminé. Page de parchemin et encre noire, bandeau bleu roi et feuille d'or, vermillon pour les sceaux et les initiales, vert prairie pour ce qui est accompli. Titres épiques (Cinzel Decorative), nom et lettrines en lettre gothique, texte en Garamond. Chaque partie est une salle à part : on y entre en brisant un sceau de cire. */
+:root{
+  --page:#0d1630;
+  --page-2:#13204a;
+  --card:#16244f;
+  --ink:#f1e8cf;
+  --ink-2:#c0c8de;
+  --royal:#2b4fc4;
+  --royal-deep:#0a1740;
+  --royal-soft:#1f3270;
+  --gold:#c9a24a;
+  --gold-text:#e0b24a;
+  --gold-leaf:#e8bd5a;
+  --vermillon:#c23b22;
+  --vermillon-deep:#8f2614;
+  --prairie:#3f8f67;
+  --prairie-deep:#7ccfa0;
+  --todo:#8b95b5;
+  --cream:#f6efdb;
+  --f-title:'UnifrakturCook','Old English Text MT',Georgia,serif;
+  --f-deco:'Cinzel Decorative','Cinzel','Trajan Pro',Georgia,serif;
+  --f-head:'Cinzel','Trajan Pro',Georgia,serif;
+  --f-body:'EB Garamond',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html.lock{overflow:hidden}
+body{background:var(--page);color:var(--ink);font:19px/1.6 var(--f-body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--royal-deep)}
+::selection{background:var(--royal);color:#fff}
+a{color:var(--royal)}
+:focus-visible{outline:2px solid var(--vermillon);outline-offset:3px}
+h1:focus,h2:focus{outline:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* En-tête */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:31;background:rgba(20,39,95,.97);border-bottom:2px solid var(--gold-leaf)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem 1.5rem;padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--cream);font:700 1rem/1 var(--f-head);letter-spacing:.08em}
+.brand svg{width:22px;height:26px;flex:none}
+.top nav{display:flex;flex-wrap:wrap;gap:.2rem 1.3rem}
+.top nav a{font:500 .78rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:rgba(248,241,222,.8);padding-block:.5rem;border-bottom:2px solid transparent}
+.top nav a:hover{color:var(--gold-leaf)}
+.top nav a[aria-current="page"]{color:var(--gold-leaf);border-bottom-color:var(--gold-leaf)}
+
+/* Salles (une par fenêtre) */
+.view{background:var(--page)}
+.view-pad{padding-block:2.5rem 1.5rem;min-height:62vh}
+.lang{font:700 .72rem/1 var(--f-head);letter-spacing:.14em;text-decoration:none;color:var(--gold-leaf);border:1px solid var(--gold-leaf);padding:.45rem .6rem;margin-left:1rem}
+.lang:hover{background:var(--royal-soft)}
+.back{font:700 .72rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--gold-leaf);border:1px solid var(--gold-leaf);padding:.7rem 1rem;cursor:pointer;margin-bottom:2rem}
+.back:hover{background:var(--royal-soft)}
+h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--gold-leaf);margin:0;letter-spacing:.02em;text-wrap:balance}
+.rule{display:flex;align-items:center;gap:.7rem;margin:.7rem 0 2rem;color:var(--gold);font-size:.7rem}
+.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* Héros : bleu roi et feuille d'or */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(60% 60% at 80% 25%,rgba(224,178,74,.3),transparent 70%),
+  linear-gradient(180deg,#10214f 0%,#1f3b8c 62%,#3454a8 100%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:2rem;align-items:center;padding-block:4.5rem 11rem}
+.eyebrow{font:500 .8rem/1.4 var(--f-head);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-leaf);margin:0 0 1rem}
+.hero h1{font:700 clamp(2.8rem,9vw,5.8rem)/1 var(--f-title);color:var(--cream);margin:0 0 .8rem;text-wrap:balance}
+.hero .titre{font:500 clamp(1.05rem,2.6vw,1.4rem)/1.4 var(--f-head);letter-spacing:.06em;color:var(--gold-leaf);margin:0 0 1.2rem}
+.hero .accroche{max-width:34rem;margin:0 0 2rem;color:rgba(248,241,222,.94)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;font:700 .8rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:.95rem 1.4rem;border:1px solid var(--gold-leaf);cursor:pointer;background:transparent;color:var(--gold-leaf)}
+.btn:hover{background:var(--royal-soft)}
+.btn-red{background:var(--vermillon);border-color:var(--gold-leaf);color:#fff8ea}
+.btn-red:hover{background:var(--vermillon-deep)}
+.portrait{margin:0;justify-self:center;width:min(100%,300px);aspect-ratio:4/5;border:3px solid var(--gold-leaf);border-radius:50% 50% 6px 6px / 38% 38% 6px 6px;outline:1px solid rgba(224,178,74,.6);outline-offset:7px;overflow:hidden;background:var(--royal-deep);box-shadow:0 18px 36px rgba(8,16,48,.5)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.castle{position:absolute;left:0;bottom:0;width:100%;height:130px;fill:var(--page)}
+.castle .w{fill:var(--royal)}
+
+/* Les six portes */
+.doors-sec{padding-block:2rem 1.5rem}
+.doors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.door{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%;height:100%;padding:2.4rem 1rem 1.5rem;text-align:center;font:inherit;color:var(--ink);cursor:pointer;background:linear-gradient(180deg,var(--card),#0e1838);border:2px solid var(--gold);border-radius:50% 50% 4px 4px / 36% 36% 4px 4px;box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(185,138,46,.6),0 8px 20px rgba(0,0,0,.14)}
+.door:hover{border-color:var(--royal);box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(31,59,140,.55),0 12px 28px rgba(31,59,140,.25)}
+.door .seal{display:block;width:92px;height:92px;margin-bottom:.3rem}
+.door .seal svg{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 7px rgba(90,30,10,.4))}
+@media (prefers-reduced-motion:no-preference){.door .seal{transition:transform .25s ease}.door:hover .seal{transform:rotate(-8deg) scale(1.08)}}
+.door .n{font:700 .92rem/1.2 var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-leaf)}
+.door .d{font-size:.98rem;color:var(--ink-2);line-height:1.3}
+.door .e{font:700 .66rem/1 var(--f-head);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:.4rem}
+@media (prefers-reduced-motion:no-preference){.door{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.door:hover{transform:translateY(-5px)}}
+@media (max-width:860px){.doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.doors{grid-template-columns:minmax(0,1fr)}}
+
+/* Vélin : cartes claires cerclées d'or */
+.parch{background:var(--card);color:var(--ink);border:1px solid var(--gold);outline:1px solid rgba(185,138,46,.55);outline-offset:-7px;box-shadow:0 10px 26px rgba(0,0,0,.16)}
+
+/* Prologue */
+.pro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+.pro-text p{margin:0 0 1.1rem;max-width:36rem}
+.pro-text p:first-child::first-letter{font:700 3.6rem/1 var(--f-title);float:left;color:var(--gold-leaf);background:var(--royal);border:2px solid var(--gold);padding:.35rem .6rem .15rem;margin:.2rem .8rem 0 0}
+.fiche{padding:1.8rem 1.8rem 1.5rem;margin:0}
+.fiche h3{font:700 .95rem/1 var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-leaf);margin:0 0 1rem}
+.fiche dl{margin:0;display:grid;gap:.8rem}
+.fiche dt{font:700 .68rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.2rem}
+.fiche dd{margin:0}
+
+/* Quêtes */
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.6rem}
+.quest{display:block;width:100%;height:100%;padding:0;text-align:left;font:inherit;cursor:pointer;overflow:hidden;position:relative}
+.quest img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--gold)}
+.q-body{display:flex;flex-direction:column;gap:.5rem;padding:1.1rem 1.2rem 1.3rem}
+.q-meta{font:700 .68rem/1.3 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin:0}
+.q-title{font:700 1.2rem/1.2 var(--f-deco);color:var(--ink)}
+.q-sum{font-size:1rem;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font:700 .62rem/1 var(--f-head);letter-spacing:.1em;text-transform:uppercase;padding:.3rem .5rem;border:1px solid var(--gold);color:var(--gold)}
+.q-more{font:700 .72rem/1 var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-leaf);margin-top:.3rem}
+@media (prefers-reduced-motion:no-preference){.quest{transition:transform .18s ease,box-shadow .18s ease}button.quest:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.28)}}
+.vide{color:var(--ink-2);font-style:italic}
+
+/* Quêtes par statut */
+.q-sec{margin:0 0 3.6rem;padding-bottom:3.6rem;position:relative;border-bottom:3px double var(--gold)}
+.q-sec:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.q-sec:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-.55rem;width:.9rem;height:.9rem;transform:translateX(-50%) rotate(45deg);background:var(--gold-leaf);border:3px solid var(--page)}
+.q-sec-title{padding:.9rem 1.1rem;background:var(--page-2);border-left:5px solid var(--c);display:flex;align-items:center;gap:.7rem;font:700 1.05rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-leaf);margin:0 0 1.2rem}
+.q-sec-title .dot{width:.7rem;height:.7rem;transform:rotate(45deg);background:var(--c)}
+.q-sec-title.st-accomplie{--c:var(--prairie)}
+.q-sec-title.st-en-cours{--c:var(--royal)}
+.q-sec-title.st-a-faire{--c:var(--todo)}
+.q-sec-title .count{font-size:.75rem;color:var(--ink-2);border:1px solid var(--gold);padding:.3rem .55rem}
+.quest.static{cursor:default}
+.badge{position:absolute;top:.8rem;left:.8rem;z-index:2;display:inline-flex;align-items:center;gap:.45rem;font:700 .66rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;padding:.5rem .65rem;border:1px solid}
+.st-accomplie .badge{background:var(--prairie);color:#f4fbf3;border-color:var(--prairie)}
+.st-en-cours .badge{background:var(--gold-leaf);color:#1b1405;border-color:var(--gold)}
+.st-a-faire .badge{background:#232f5a;color:var(--ink-2);border-color:var(--todo)}
+.badge .pulse{width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+@media (prefers-reduced-motion:no-preference){.badge .pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.25}}}
+.quest.st-accomplie{border-color:var(--prairie)}
+.quest.st-en-cours{background:linear-gradient(160deg,var(--royal),var(--royal-deep));color:var(--cream);border:1px solid var(--gold-leaf);outline:1px solid rgba(224,178,74,.5);outline-offset:-7px;box-shadow:0 10px 26px rgba(20,39,95,.35)}
+.quest.st-en-cours img{border-bottom-color:var(--gold-leaf)}
+.quest.st-en-cours .q-title{color:var(--cream)}
+.quest.st-en-cours .q-meta{color:var(--gold-leaf)}
+.quest.st-en-cours .chip{border-color:var(--gold-leaf);color:var(--gold-leaf)}
+.quest.st-en-cours .q-more{color:var(--gold-leaf)}
+.prog{display:grid;gap:.35rem;font:700 .64rem/1 var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-leaf)}
+.prog span{display:block;height:7px;border:1px solid rgba(224,178,74,.6);background:rgba(255,255,255,.12)}
+.prog i{display:block;height:100%;background:var(--gold-leaf)}
+.quest.st-a-faire{background:rgba(255,255,255,.05);color:var(--ink-2);border:1px dashed var(--todo);box-shadow:none}
+.quest.st-a-faire img{filter:grayscale(1) contrast(.85);opacity:.55;border-bottom:1px dashed var(--todo)}
+.quest.st-a-faire .q-title{color:var(--ink)}
+.quest.st-a-faire .q-meta{color:var(--todo)}
+.quest.st-a-faire .chip{border-color:var(--todo);color:var(--todo)}
+
+/* Arbre de compétences en étoile */
+.radial-wrap{overflow:hidden}
+.radial{display:block;width:100%;height:auto;max-width:1000px;margin:0 auto}
+.radial .ring{fill:none;stroke:var(--gold);stroke-opacity:.45;stroke-dasharray:3 8}
+.radial .edge{stroke:var(--gold);stroke-width:1.5;stroke-opacity:.85;fill:none}
+.radial .e1{stroke:var(--royal);stroke-opacity:1;stroke-width:2.4}
+.radial .nb{fill:var(--card);stroke:var(--gold);stroke-width:1.3}
+.radial .core{stroke:var(--gold-leaf);stroke-width:2.5}
+.radial .core-ring{fill:none;stroke:var(--gold);stroke-width:1.2}
+.radial .core-text{font-family:var(--f-title);font-size:22px;font-weight:700;fill:var(--cream);text-anchor:middle}
+.rnode text{font-family:var(--f-body);font-size:15px;fill:var(--ink);text-anchor:middle}
+.rnode .dt{font-size:12px;fill:var(--ink-2)}
+.rnode.d1 .nb{fill:var(--card);stroke:var(--gold)}
+
+.rnode:hover .nb{stroke:var(--royal);stroke-width:1.8}
+
+.pip{fill:none;stroke:var(--gold-text);stroke-width:1.2}
+.pip.on{fill:var(--gold)}
+.tree-wrap{display:none}
+@media (max-width:760px){.radial-wrap{display:none}.tree-wrap{display:block}}
+
+/* Arbre vertical (téléphone) */
+.tree-wrap{overflow-x:auto;padding:.6rem .2rem 1rem}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree{--line:var(--gold)}
+.tree li{display:flex;align-items:center;position:relative}
+.tree li>ul{position:relative;margin-left:44px;display:flex;flex-direction:column;gap:.7rem}
+.tree li>ul::before{content:"";position:absolute;left:-44px;top:50%;width:22px;border-top:1px solid var(--line)}
+.tree li>ul>li::before{content:"";position:absolute;left:-22px;top:50%;width:22px;border-top:1px solid var(--line)}
+.tree li>ul>li::after{content:"";position:absolute;left:-22px;top:-.35rem;bottom:-.35rem;border-left:1px solid var(--line)}
+.tree li>ul>li:first-child::after{top:50%}
+.tree li>ul>li:last-child::after{bottom:50%}
+.tree li>ul>li:only-child::after{display:none}
+.node{display:flex;align-items:center;gap:.8rem;min-height:2.6rem;padding:.35rem .9rem;border:1px solid var(--gold);background:var(--card);color:var(--ink);white-space:nowrap;position:relative}
+.node .nm{font:500 1rem/1.2 var(--f-body)}
+.node .det{color:var(--ink-2);font-size:.9rem}
+.node.d0{background:linear-gradient(160deg,var(--vermillon),#8f2614);border-color:var(--gold-leaf);color:var(--cream)}
+.node.d0 .nm{font:700 1.3rem/1 var(--f-title)}
+.node.d1{background:var(--royal);border-color:var(--gold-leaf)}
+.node.d1 .nm{font:700 .8rem/1.2 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-leaf)}
+@media (max-width:900px){
+  .tree li{display:block}
+  .tree li>ul{margin:.7rem 0 0 1.1rem;padding-left:1.5rem}
+  .tree li>ul::before{display:none}
+  .tree li>ul>li::before{left:-1.5rem;width:1.5rem;top:1.3rem}
+  .tree li>ul>li::after{left:-1.5rem;top:-.35rem;bottom:-.35rem}
+  .tree li>ul>li:first-child::after{top:-.7rem}
+  .tree li>ul>li:last-child::after{bottom:auto;height:calc(1.3rem + .35rem)}
+  .tree li>ul>li:only-child::after{display:block;top:-.7rem;bottom:auto;height:2rem}
+  .node{white-space:normal;width:fit-content;max-width:100%}
+}
+.pips{display:flex;gap:.4rem;flex:none}
+.pips i{width:.6rem;height:.6rem;transform:rotate(45deg);border:1px solid var(--gold-text)}
+.pips i.on{background:var(--gold)}
+.legend{margin:1.2rem 0 0;font-size:.92rem;color:var(--ink-2)}
+
+/* Chroniques */
+.timeline{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--prairie);display:grid;gap:1.8rem;max-width:44rem}
+.timeline li{position:relative}
+.timeline li::before{content:"";position:absolute;left:calc(-1.6rem - 5px);top:.5rem;width:9px;height:9px;transform:rotate(45deg);background:var(--gold)}
+.t-date{font:700 .72rem/1 var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-leaf);margin:0 0 .4rem}
+.t-title{font:700 1.1rem/1.3 var(--f-deco);color:var(--gold-leaf);margin:0 0 .3rem}
+.timeline p:last-child{margin:0;color:var(--ink)}
+
+/* Courrier */
+.contact{padding:2rem;max-width:44rem}
+.messager{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:2rem;align-items:start}
+.messager .contact{max-width:none}
+.cvfig{margin:0}
+.cvfig figcaption{font:700 .72rem/1 var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.8rem}
+.cvfig .shot{border:1px solid var(--gold);background:var(--card);box-shadow:0 10px 26px rgba(0,0,0,.2)}
+.cvfig .shot img{aspect-ratio:auto;height:auto;object-fit:contain}
+#stage{padding-bottom:3rem}
+@media (max-width:900px){.messager{grid-template-columns:minmax(0,1fr)}}
+.contact p{margin:0 0 1rem}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin:0 0 1.1rem}
+.mail code{font:600 1.05rem var(--f-head);letter-spacing:.04em;overflow-wrap:anywhere;user-select:all}
+.mail .lbl{flex-basis:100%;font:700 .66rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text)}
+.contact .btn{border-color:var(--gold-leaf);color:var(--gold-leaf)}
+.contact .btn:hover{background:var(--royal-soft)}
+.contact .btn-red{background:var(--vermillon);border-color:var(--gold-leaf);color:#fff8ea}
+.contact .btn-red:hover{background:var(--vermillon-deep)}
+.copied{font-size:.95rem;color:var(--gold-leaf);min-height:1.4em;margin:0}
+.socials{display:flex;flex-wrap:wrap;gap:.7rem}
+
+/* Quêtes annexes */
+.passions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.6rem}
+.passion{padding:1.6rem 1.6rem 1.4rem}
+.passion h3{font:700 1.15rem/1.2 var(--f-deco);color:var(--gold-leaf);margin:0 0 .6rem}
+.passion p{margin:0 0 .9rem;font-size:1.02rem;line-height:1.5}
+
+/* Fenêtre d'un projet */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(20,39,95,.8);overflow-y:auto;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sheet{position:relative;max-width:880px;margin:1.5rem auto;padding:2.4rem 2.2rem 2.2rem}
+.sheet h3{font:700 clamp(1.5rem,4vw,2.1rem)/1.15 var(--f-deco);margin:.3rem 0 1.2rem;color:var(--gold-leaf)}
+.close{position:absolute;top:.8rem;right:.8rem;font:700 .7rem/1 var(--f-head);letter-spacing:.12em;text-transform:uppercase;background:var(--vermillon);color:#fff8ea;border:0;padding:.7rem .9rem;cursor:pointer}
+.close:hover{background:var(--vermillon-deep)}
+.infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem 1.4rem;margin:0 0 1.6rem;padding:1rem 0;border-block:1px solid rgba(185,138,46,.5)}
+.infos dt{font:700 .66rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.25rem}
+.infos dd{margin:0;font-size:1rem}
+.sheet-body p{margin:0 0 1rem;max-width:40rem}
+.medias{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.2rem;margin:1.6rem 0}
+.medias figure{margin:0;min-width:0}
+.medias .m-wide{grid-column:1/-1}
+.medias figcaption{font-size:.92rem;font-style:italic;margin-top:.4rem;color:var(--ink-2)}
+.frame{aspect-ratio:16/9;max-width:100%;background:#000;border:1px solid var(--gold)}
+.frame iframe,.frame video{width:100%;height:100%;border:0;display:block}
+.alt{margin:.4rem 0 0;font-size:.9rem}
+.alt a{color:var(--gold-leaf)}
+.shot{display:block;width:100%;padding:0;border:1px solid var(--gold);background:#000;cursor:zoom-in}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.links{display:flex;flex-wrap:wrap;gap:.7rem}
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(12,20,48,.95);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:82vh;object-fit:contain;border:1px solid var(--gold-leaf)}
+.lightbox p{margin:0;color:var(--cream);font-style:italic;text-align:center}
+
+/* Effet d'entrée : sceau de cire brisé */
+#fx{position:fixed;inset:0;z-index:90;pointer-events:none;overflow:hidden}
+#fxCanvas{position:absolute;inset:0;width:100%;height:100%}
+.fx-flash{position:absolute;inset:0;opacity:0}
+.fx-ring{position:absolute;width:260vmax;height:260vmax;border-radius:50%;opacity:0;background:radial-gradient(circle,transparent 0 56%,rgba(255,196,96,.75) 61%,rgba(255,140,50,.28) 65%,transparent 72%)}
+.fx-seal{position:absolute;width:120px;height:120px;display:none;filter:drop-shadow(0 6px 12px rgba(60,20,10,.5))}
+
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr;padding-block:3rem 9rem}
+  .portrait{width:190px;justify-self:start;order:-1}
+  .pro{grid-template-columns:1fr;gap:2rem}
+  .sheet{padding:2.8rem 1.2rem 1.6rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#accueil" data-view="accueil">
+      <svg viewBox="0 0 200 240" aria-hidden="true"><path d="M100 8L184 34V118C184 176 148 216 100 234C52 216 16 176 16 118V34Z" fill="#c23b22" stroke="#e0b24a" stroke-width="12"/></svg>
+      <span id="brandName">Léo Bouyat</span>
+    </a>
+    <nav id="nav" aria-label="Main navigation"></nav>
+    <a class="lang" href="index.html" hreflang="fr" lang="fr" title="Lire ce site en français">FR</a>
+  </div>
+</header>
+
+<main id="stage">
+
+  <!-- Accueil : le hall du château -->
+  <div class="view" id="v-accueil">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow" id="heroEyebrow"></p>
+          <h1 id="heroName" tabindex="-1"></h1>
+          <p class="titre" id="heroTitle"></p>
+          <p class="accroche" id="heroHook"></p>
+        </div>
+        <figure class="portrait"><img id="portraitImg" src="images/leo.jpg" alt="Portrait of Léo Bouyat"></figure>
+      </div>
+      <svg class="castle" id="castle" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+    </div>
+    <div class="doors-sec">
+      <div class="wrap">
+        <h2>Choose a door</h2>
+        <div class="rule" aria-hidden="true">◆</div>
+        <ul class="doors" id="doors"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prologue -->
+  <div class="view" id="v-prologue" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">Prologue</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <div class="pro">
+        <div class="pro-text" id="proText"></div>
+        <aside class="fiche parch" aria-label="Developer sheet">
+          <h3>Character sheet</h3>
+          <dl id="fiche"></dl>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quêtes -->
+  <div class="view" id="v-quetes" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">The Quests</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <div id="questSections"></div>
+    </div>
+  </div>
+
+  <!-- Arbre de compétences -->
+  <div class="view" id="v-competences" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">Skill Tree</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <div class="radial-wrap"><svg id="radial" class="radial" viewBox="0 0 1000 800" role="group" aria-label="Skill tree"></svg></div>
+      <div class="tree-wrap"><ul class="tree" id="tree"></ul></div>
+      <p class="legend">Each branch leads to what I have unlocked through it. Skill level: from 1 diamond (apprentice) to 5 diamonds (master).</p>
+    </div>
+  </div>
+
+  <!-- Chroniques -->
+  <div class="view" id="v-chroniques" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">The Chronicles</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </div>
+
+  <!-- Quêtes annexes -->
+  <div class="view" id="v-annexes" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">Side Quests</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <div class="passions" id="passions"></div>
+    </div>
+  </div>
+
+  <!-- Courrier -->
+  <div class="view" id="v-courrier" hidden>
+    <div class="wrap view-pad">
+      <button class="back" type="button" data-view="accueil">← Back to the castle</button>
+      <h2 tabindex="-1">Mail</h2>
+      <div class="rule" aria-hidden="true">◆</div>
+      <div class="messager">
+      <div class="contact parch">
+        <p id="contactText"></p>
+        <div id="contactRows"></div>
+        <p class="copied" id="copied" role="status"></p>
+        <div class="socials" id="socials"></div>
+      </div>
+      <figure class="cvfig"><figcaption>My CV (in French)</figcaption><button class="shot" type="button" data-src="images/cv-leo-bouyat.jpg" data-cap="Léo Bouyat's CV (in French)" aria-label="Enlarge my CV"><img src="images/cv-leo-bouyat.jpg" alt="Léo Bouyat's CV (in French)" loading="lazy"></button></figure>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="overlay" id="overlay" hidden>
+  <article class="sheet parch" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="close" type="button" id="closeSheet">Close</button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </article>
+</div>
+<div class="lightbox" id="lightbox" hidden><img id="lbImg" alt=""><p id="lbCap"></p></div>
+
+<div id="fx" aria-hidden="true">
+  <div class="fx-flash" id="fxFlash"></div>
+  <div class="fx-ring" id="fxRing"></div>
+  <canvas id="fxCanvas"></canvas>
+  <div class="fx-seal" id="fxSeal"></div>
+</div>
+
+<noscript><p class="wrap">This portfolio needs JavaScript to display its content.</p></noscript>
+
+<script>
+/* Outils internes (à ne pas modifier) : doivent rester avant la configuration. */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* =====================================================================
+   CONFIGURATION : c'est la seule zone à modifier pour mettre à jour le site.
+   Tout le contenu ci-dessous est un EXEMPLE à remplacer par le tien.
+   ===================================================================== */
+
+const PROFIL = {
+  nom: "Léo Bouyat",
+  titre: "Video game development student",
+  ecole: "Gaming Campus · Bachelor in Software Development · 2nd year",
+  accroche: "Curious and self-reliant, I deepen my knowledge through personal 2D and 3D projects while building my modelling skills with Blender.",
+  intro: [
+    "My name is Léo, I am 19 and I am a second-year bachelor student at Gaming Campus. I am originally from Brittany and I now live in Triel-sur-Seine, near Paris. I earned a technological STI2D baccalaureate with honours (mention assez bien) before turning to video games.",
+    "I program in C++ and C# with SFML and Unity, and I learn Blender in my free time. I like learning on my own, testing ideas in personal projects and seeing team projects through, as in game jams.",
+    "Away from screens, I have played competitive badminton for twelve years, I cook, and I listen to music every day."
+  ],
+  fiche: [
+    { k: "Age", v: "19" },
+    { k: "Origin", v: "Brittany, France" },
+    { k: "Lives in", v: "Triel-sur-Seine, France" },
+    { k: "Studies", v: "Gaming Campus, bachelor in software development" },
+    { k: "High school", v: "Technological STI2D baccalaureate, with honours" },
+    { k: "Languages", v: "French (native), English (A2-B1)" }
+  ],
+  contact: "A project, a team, an internship or a work-study placement? Write to me, I am happy to answer.",
+  coordonnees: [
+    { label: "Email", valeur: "leobouyat@gmail.com" },
+    { label: "Phone", valeur: "06 78 02 56 70" }
+  ],
+  liens: [
+    { label: "GitHub", url: "https://github.com/l-e-o-b" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/leo-bouyat-08b264386" }
+  ]
+};
+
+/* ---------------------------------------------------------------------
+   PROJETS : pour en ajouter un, copie un bloc { ... } complet, colle-le
+   dans la liste (sans oublier la virgule) et change les valeurs.
+   - id        : mot unique sans espace (ex. "mon-jeu")
+   - cover     : image de couverture (chemin ou URL). Si vide, un blason est généré.
+   - role / equipe / duree : optionnels, laisse "" pour ne rien afficher.
+   - medias    : liste d'images et de vidéos affichées dans la fenêtre du projet :
+       { type: "image",   src: "images/mon-jeu/01.png", legende: "Menu principal" }
+       { type: "video",   src: "videos/mon-jeu.mp4", poster: "images/mon-jeu/01.png", legende: "Démo" }
+       { type: "youtube", id: "IDENTIFIANT_VIDEO", legende: "Trailer" }
+     (l'identifiant YouTube est la fin du lien après v=)
+   - liens     : boutons en bas de la fenêtre. Ajoute download: true pour un fichier à télécharger.
+   - statut    : "accomplie", "en-cours" ou "a-faire" : le projet change de visuel selon son statut.
+   - progression : (en cours seulement) un nombre de 0 à 100 pour la barre d'avancement.
+   - Un projet sans "texte" ni "medias" n'ouvre pas de fenêtre.
+   - tags      : petites étiquettes affichées sur la carte.
+   --------------------------------------------------------------------- */
+const PROJETS = [
+  {
+    id: "raven-soul",
+    statut: "accomplie",
+    titre: "Raven Soul",
+    annee: "",
+    type: "2D game · Unity",
+    hue: 270,
+    cover: "images/raven-soul-1.jpg",
+    role: "",
+    equipe: "Team project",
+    duree: "",
+    outils: ["Unity", "C#"],
+    tags: ["Unity", "2D", "Team"],
+    resume: "A Flappy Bird remake with a dark, gothic art direction, where the Grim Reaper creates a messenger crow.",
+    texte: [
+      "Raven Soul is a Flappy Bird remake with a different art direction, made as a team with Unity 2D.",
+      "In the story, the Grim Reaper can no longer act directly: she creates a messenger, a crow unlike any other.",
+      "The levels take place in a gothic atmosphere, among columns and stained glass. A special ability is triggered with the Shift key, and the menu lets you adjust the music and sound effects.",
+      "This project let me deepen my C#, build gameplay mechanics, handle collisions and solve technical problems."
+    ],
+    medias: [
+      { type: "video", src: "videos/raven-soul.mp4", poster: "images/raven-soul-1.jpg", legende: "Game overview" },
+      { type: "image", src: "images/raven-soul-3.jpg", legende: "The introduction" },
+      { type: "image", src: "images/raven-soul-1.jpg", legende: "A level" },
+      { type: "image", src: "images/raven-soul-2.jpg", legende: "The options menu" }
+    ],
+    liens: []
+  },
+  {
+    id: "shoot-em-up",
+    statut: "accomplie",
+    titre: "Shoot-em-up and 2D engine",
+    annee: "",
+    type: "Shoot-em-up · SFML",
+    hue: 12,
+    cover: "",
+    role: "",
+    equipe: "",
+    duree: "",
+    outils: ["C++", "SFML"],
+    tags: ["C++", "SFML", "2D"],
+    resume: "A shoot-em-up built with SFML, around a small 2D engine.",
+    texte: [
+      "Development of a shoot-em-up with SFML in C++.",
+      "This project strengthened my programming and project management skills."
+    ],
+    medias: [],
+    liens: []
+  },
+  {
+    id: "demineur",
+    statut: "accomplie",
+    titre: "Minesweeper",
+    annee: "2026",
+    type: "Console game · C++",
+    hue: 125,
+    cover: "",
+    role: "",
+    equipe: "Solo",
+    duree: "",
+    outils: ["C++", "Visual Studio"],
+    tags: ["C++", "Console"],
+    resume: "The classic Minesweeper, in a console version.",
+    texte: [
+      "A Minesweeper mini-game written in C++ and playable in a Windows console window."
+    ],
+    medias: [],
+    liens: [{ label: "Download (Windows)", url: "jeux/demineur.zip", download: "demineur.zip" }]
+  },
+  {
+    id: "morpion",
+    statut: "accomplie",
+    titre: "Tic-tac-toe",
+    annee: "2026",
+    type: "Console game · C++",
+    hue: 40,
+    cover: "",
+    role: "",
+    equipe: "Solo",
+    duree: "",
+    outils: ["C++", "Visual Studio"],
+    tags: ["C++", "Console"],
+    resume: "Tic-tac-toe, in a console version.",
+    texte: [
+      "A tic-tac-toe mini-game written in C++ and playable in a Windows console window."
+    ],
+    medias: [],
+    liens: [{ label: "Download (Windows)", url: "jeux/morpion.zip", download: "morpion.zip" }]
+  },
+  {
+    id: "projet-en-cours",
+    statut: "en-cours",
+    titre: "Current project",
+    annee: "",
+    type: "In development",
+    hue: 225,
+    cover: "",
+    progression: 0,
+    resume: "The project I am working on right now will appear here.",
+    tags: []
+  },
+  {
+    id: "projet-a-faire",
+    statut: "a-faire",
+    titre: "Next project",
+    annee: "",
+    type: "Coming soon",
+    hue: 215,
+    cover: "",
+    resume: "The next game I want to make will appear here.",
+    tags: []
+  }
+];
+
+/* COMPETENCES : l'arbre en étoile. Chaque branche part du centre et a des "enfants" (ce qu'elle débloque).
+   - angle     : direction de la branche en degrés (0 = droite, 90 = bas, 180 = gauche, 270 = haut).
+   - ouverture : largeur de l'éventail occupé par la branche, en degrés.
+   - niveau de 1 à 5 (losanges) ; sans niveau, on peut afficher un texte avec detail. */
+const COMPETENCES = [
+  { nom: "Programming", angle: 225, ouverture: 120, enfants: [
+    { nom: "C++", niveau: 3, enfants: [{ nom: "SFML", niveau: 3 }] },
+    { nom: "C#", niveau: 3, enfants: [{ nom: "Unity", niveau: 2 }] }
+  ] },
+  { nom: "Tools", angle: 285, ouverture: 40, enfants: [{ nom: "GitHub", niveau: 4 }] },
+  { nom: "Qualities", angle: 0, ouverture: 110, enfants: [
+    { nom: "Autonomy" }, { nom: "Team spirit" }, { nom: "Rigour" },
+    { nom: "Perseverance" }, { nom: "Observation" }, { nom: "Versatility" }
+  ] },
+  { nom: "Languages", angle: 120, ouverture: 80, enfants: [
+    { nom: "French", detail: "native language" },
+    { nom: "English", detail: "A2-B1" }
+  ] }
+];
+
+const PARCOURS = [
+  { date: "Since 2025", titre: "Bachelor in Software Development, Gaming Campus", texte: "Second year. C++ and C# projects with SFML and Unity, and a team game jam." },
+  { date: "2025", titre: "Game Jam", texte: "Making a game as a team around a set theme, to build my creativity, collaboration and adaptability." },
+  { date: "October to December 2025", titre: "Babysitting", texte: "Looking after children for three months." },
+  { date: "2025 — 2026", titre: "Temp work at ITM LAI, Neuillac", texte: "About 400 hours in a factory: preparing pallets and handling goods. These assignments built my rigour, stamina and sense of organisation." },
+  { date: "One day", titre: "Temp work at Ker Cadélac, Loudéac", texte: "A one-day assignment: I unfolded flat cartons and packed the cakes arriving on the conveyor belt." },
+  { date: "One day", titre: "Agricultural temp work", texte: "A day in the fields alongside farmers." },
+  { date: "For 12 years", titre: "Badminton and volunteering", texte: "High-level competition, and volunteering at tournaments organised by the clubs where I have played and still play today." },
+  { date: "2025", titre: "Technological baccalaureate (STI2D)", texte: "Passed with honours (mention assez bien)." }
+];
+
+const PASSIONS = [
+  { titre: "Badminton", texte: "Twelve years of badminton, including high-level competition. I also volunteer at tournaments organised by the clubs where I have played and still play.", puces: ["12 years of play", "Competition", "Tournament volunteering", "Running", "Cycling"] },
+  { titre: "Cooking", texte: "I cook often and love learning new recipes. My favourites: beef stroganoff and honey-caramelised potatoes. And I never say no to cheese.", puces: ["Beef stroganoff", "Honey potatoes", "Cheese"] },
+  { titre: "Music", texte: "I listen to music every day, of every kind, with a preference for electro, pop and tracks that make the speakers shake.", puces: ["Electro", "Pop", "Powerful sounds"] },
+  { titre: "Video games", texte: "My favourite game is Call of Duty: Black Ops II, which defined my childhood. I also enjoy open-world RPGs, action games like Alienation, survival games and building games.", puces: ["Elder Scrolls Online", "Conan Exiles", "Alienation", "The Forest", "Raft", "ARK: Survival", "Satisfactory"] },
+  { titre: "Languages", texte: "I speak French and can hold a conversation in English, at a level between A2 and B1.", puces: ["French", "English A2-B1"] }
+];
+
+/* Les six salles : nom affiché, lettre gravée sur le sceau, phrase d'accroche. */
+const SALLES = [
+  { id: "prologue",    nom: "Prologue",             glyph: "P", desc: "Who I am" },
+  { id: "quetes",      nom: "The Quests",           glyph: "Q", desc: "My game projects" },
+  { id: "competences", nom: "Skill Tree",            glyph: "A", desc: "Skills and tools" },
+  { id: "chroniques",  nom: "The Chronicles",       glyph: "C", desc: "Background and experience" },
+  { id: "annexes",     nom: "Side Quests",           glyph: "§", desc: "My passions" },
+  { id: "courrier",    nom: "Mail",                  glyph: "@", desc: "Get in touch" }
+];
+
+/* =====================================================================
+   FIN DE LA CONFIGURATION : le reste affiche simplement ce qui précède.
+   ===================================================================== */
+
+/* Image de remplacement : un blason avec le titre, utilisé tant que tu n'as pas de vraie capture. */
+function ph(label, hue) {
+  hue = hue ?? 28;
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(' + hue + ' 45% 24%)"/><stop offset="1" stop-color="hsl(' + (hue + 20) + ' 40% 9%)"/></linearGradient></defs>' +
+    '<rect width="640" height="360" fill="url(#g)"/>' +
+    '<path d="M320 70l78 26v62c0 52-34 88-78 106-44-18-78-54-78-106V96z" fill="none" stroke="hsl(' + hue + ' 55% 62%)" stroke-width="4"/>' +
+    '<text x="320" y="318" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="hsl(' + hue + ' 40% 80%)">' + esc(label) + '</text></svg>';
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+
+/* Château en silhouette */
+(function drawCastle() {
+  const H = 160, parts = [];
+  const tower = (x, w, h) => {
+    parts.push('<rect x="' + x + '" y="' + (H - h) + '" width="' + w + '" height="' + h + '"/>');
+    const n = Math.floor(w / 16);
+    for (let i = 0; i < n; i += 2) parts.push('<rect x="' + (x + i * 16) + '" y="' + (H - h - 12) + '" width="16" height="12"/>');
+  };
+  const roof = (x, w, h, up) => parts.push('<polygon points="' + (x - 8) + ',' + (H - h - 12) + ' ' + (x + w / 2) + ',' + (H - h - 12 - up) + ' ' + (x + w + 8) + ',' + (H - h - 12) + '"/>');
+  const win = (x, y) => parts.push('<rect class="w" x="' + x + '" y="' + y + '" width="7" height="14" opacity=".85"/>');
+  tower(0, 1200, 64);
+  tower(120, 96, 138); roof(120, 96, 138, 54);
+  tower(430, 72, 112);
+  tower(700, 112, 150); roof(700, 112, 150, 58);
+  tower(990, 84, 122);
+  win(160, H - 106); win(178, H - 80); win(452, H - 88); win(745, H - 118); win(765, H - 92); win(1020, H - 96);
+  $("#castle").innerHTML = parts.join("");
+})();
+
+/* Profil */
+$("#brandName").textContent = PROFIL.nom;
+$("#heroEyebrow").textContent = PROFIL.ecole;
+$("#heroName").textContent = PROFIL.nom;
+$("#heroTitle").textContent = PROFIL.titre;
+$("#heroHook").textContent = PROFIL.accroche;
+$("#proText").innerHTML = PROFIL.intro.map(t => "<p>" + esc(t) + "</p>").join("");
+$("#fiche").innerHTML = PROFIL.fiche.map(f => "<div><dt>" + esc(f.k) + "</dt><dd>" + esc(f.v) + "</dd></div>").join("");
+$("#contactText").textContent = PROFIL.contact;
+$("#contactRows").innerHTML = PROFIL.coordonnees.map(c =>
+  '<div class="mail"><span class="lbl">' + esc(c.label) + '</span><code>' + esc(c.valeur) + '</code>' +
+  '<button class="btn" type="button" data-copy="' + esc(c.valeur) + '">Copy</button></div>').join("");
+$("#passions").innerHTML = PASSIONS.map(p =>
+  '<article class="passion parch"><h3>' + esc(p.titre) + '</h3><p>' + esc(p.texte) + '</p><div class="chips">' +
+  p.puces.map(c => '<span class="chip">' + esc(c) + '</span>').join("") + '</div></article>').join("");
+$("#socials").innerHTML = PROFIL.liens.map((l, i) => '<a class="btn ' + "" + '" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>").join("");
+
+/* Menu et portes générés depuis SALLES */
+$("#nav").innerHTML = SALLES.map(s => '<a href="#' + s.id + '" data-view="' + s.id + '">' + esc(s.nom) + "</a>").join("");
+$("#doors").innerHTML = SALLES.map((s, i) =>
+  '<li><button class="door" type="button" data-view="' + s.id + '"><span class="seal" aria-hidden="true">' + sealSvg(s.glyph, "d" + i) + '</span>' +
+  '<span class="n">' + esc(s.nom) + '</span><span class="d">' + esc(s.desc) + '</span><span class="e">Enter</span></button></li>').join("");
+
+/* Copier une coordonnée */
+$("#contactRows").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-copy]"); if (!b) return;
+  const out = $("#copied");
+  try {
+    await navigator.clipboard.writeText(b.dataset.copy);
+    out.textContent = "Copied: " + b.dataset.copy;
+  } catch (err) {
+    const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector("code"));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    out.textContent = "Text selected, copy it with Ctrl+C.";
+  }
+});
+
+/* Quêtes */
+const STATUTS = [
+  { id: "accomplie", titre: "Completed quests", label: "Completed", vide: "No completed quests yet.",
+    icon: '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>' },
+  { id: "en-cours", titre: "Quests in progress", label: "In progress", vide: "No quests in progress yet.",
+    icon: '<span class="pulse" aria-hidden="true"></span>' },
+  { id: "a-faire", titre: "Quests to do", label: "To do", vide: "No quests to do yet.",
+    icon: '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><rect x="3.5" y="7" width="9" height="7" fill="currentColor"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>' }
+];
+function questCard(p) {
+  const st = STATUTS.find(x => x.id === (p.statut || "accomplie")) || STATUTS[0];
+  const open = (p.texte && p.texte.length) || (p.medias && p.medias.length);
+  const tags = (p.tags || []).map(t => '<span class="chip">' + esc(t) + "</span>").join("");
+  const prog = st.id === "en-cours" && p.progression ? '<span class="prog">Progress: ' + esc(p.progression) + ' %<span><i style="width:' + Math.max(0, Math.min(100, Number(p.progression) || 0)) + '%"></i></span></span>' : "";
+  const tag = open ? "button" : "div";
+  const attrs = open ? ' type="button" data-id="' + esc(p.id) + '" aria-haspopup="dialog"' : "";
+  return "<li><" + tag + ' class="quest st-' + st.id + (st.id === "accomplie" ? " parch" : "") + (open ? "" : " static") + '"' + attrs + ">" +
+    '<span class="badge">' + st.icon + esc(st.label) + "</span>" +
+    '<img src="' + esc(p.cover || ph(p.titre, p.hue)) + '" alt="Preview of ' + esc(p.titre) + '" loading="lazy">' +
+    '<span class="q-body"><span class="q-meta">' + esc([p.type, p.annee].filter(Boolean).join(" · ")) + "</span>" +
+    '<span class="q-title">' + esc(p.titre) + "</span>" +
+    '<span class="q-sum">' + esc(p.resume) + "</span>" +
+    (tags ? '<span class="chips">' + tags + "</span>" : "") + prog +
+    (open ? '<span class="q-more">Read the chronicle →</span>' : "") +
+    "</span></" + tag + "></li>";
+}
+function renderQuests() {
+  $("#questSections").innerHTML = STATUTS.map(st => {
+    const list = PROJETS.filter(p => (p.statut || "accomplie") === st.id);
+    return '<div class="q-sec"><h3 class="q-sec-title st-' + st.id + '"><span class="dot"></span>' + esc(st.titre) + '<span class="count">' + list.length + "</span></h3>" +
+      (list.length ? '<ul class="grid">' + list.map(questCard).join("") + "</ul>" : '<p class="vide">' + esc(st.vide) + "</p>") + "</div>";
+  }).join("");
+}
+renderQuests();
+
+/* Arbre de compétences */
+function pipsHtml(n) {
+  return '<span class="pips" role="img" aria-label="Level ' + n + ' out of 5">' + [1, 2, 3, 4, 5].map(k => '<i class="' + (k <= n ? "on" : "") + '"></i>').join("") + "</span>";
+}
+function nodeHtml(n, depth) {
+  const cls = "node d" + Math.min(depth, 3) + (n.niveau ? " skill" : "");
+  const extra = n.niveau ? pipsHtml(n.niveau) : (n.detail ? '<span class="det">' + esc(n.detail) + "</span>" : "");
+  const kids = (n.enfants || []).length ? "<ul>" + n.enfants.map(c => nodeHtml(c, depth + 1)).join("") + "</ul>" : "";
+  return '<li><div class="' + cls + '"><span class="nm">' + esc(n.nom) + "</span>" + extra + "</div>" + kids + "</li>";
+}
+$("#tree").innerHTML = nodeHtml({ nom: PROFIL.nom, enfants: COMPETENCES }, 0);
+
+/* Arbre en étoile : un point central d'où partent les branches */
+function buildRadial() {
+  const svg = $("#radial"); if (!svg) return;
+  const NS = "http://www.w3.org/2000/svg", CX = 500, CY = 400, R = d => 130 + 120 * (d - 1);
+  const ctx = document.createElement("canvas").getContext("2d");
+  const meas = (txt, font, ls) => { ctx.font = font; return ctx.measureText(txt).width + (ls || 0) * txt.length; };
+  const el = (name, attrs, parent) => { const e = document.createElementNS(NS, name); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const BODY = "'EB Garamond', Georgia, serif", HEAD = "Cinzel, Georgia, serif";
+  const leaves = n => (n.enfants && n.enfants.length) ? n.enfants.reduce((a, c) => a + leaves(c), 0) : 1;
+  const place = (n, a0, a1) => {
+    const kids = n.enfants || [];
+    if (!kids.length) { n._a = (a0 + a1) / 2; return; }
+    const total = leaves(n); let cur = a0;
+    kids.forEach(c => { const w = (a1 - a0) * leaves(c) / total; place(c, cur, cur + w); cur += w; });
+    n._a = (kids[0]._a + kids[kids.length - 1]._a) / 2;
+  };
+  COMPETENCES.forEach((b, i) => {
+    if (b.angle === undefined) { b.angle = i * 360 / COMPETENCES.length - 90; b.ouverture = 360 / COMPETENCES.length * 0.8; }
+    place(b, b.angle - (b.ouverture || 40) / 2, b.angle + (b.ouverture || 40) / 2);
+  });
+  const size = (n, depth) => {
+    if (depth === 1) return { w: meas(n.nom, "500 15px " + BODY) + 28, h: 32 };
+    const nm = meas(n.nom, "500 15px " + BODY);
+    if (n.niveau) return { w: Math.max(nm, 66) + 28, h: 48 };
+    if (n.detail) return { w: Math.max(nm, meas(n.detail, "400 12px " + BODY)) + 28, h: 46 };
+    return { w: nm + 28, h: 32 };
+  };
+  const nodes = [], edges = [];
+  const walk = (n, depth, from) => {
+    const a = n._a * Math.PI / 180, r = R(depth), x = CX + r * Math.cos(a), y = CY + r * Math.sin(a);
+    nodes.push(Object.assign({ n, depth, x, y }, size(n, depth)));
+    edges.push({ from, to: [x, y], depth });
+    (n.enfants || []).forEach(c => walk(c, depth + 1, [x, y]));
+  };
+  COMPETENCES.forEach(b => walk(b, 1, [CX, CY]));
+
+  svg.innerHTML = "";
+  const defs = el("defs", {}, svg);
+  const g = el("radialGradient", { id: "coreGrad", cx: "35%", cy: "30%", r: "80%" }, defs);
+  el("stop", { offset: "0", "stop-color": "#d4573d" }, g); el("stop", { offset: ".6", "stop-color": "#c23b22" }, g); el("stop", { offset: "1", "stop-color": "#8f2614" }, g);
+  [1, 2, 3].forEach(d => el("circle", { cx: CX, cy: CY, r: R(d), class: "ring" }, svg));
+  edges.forEach(e => el("line", { x1: e.from[0], y1: e.from[1], x2: e.to[0], y2: e.to[1], class: "edge e" + e.depth }, svg));
+  nodes.forEach(o => {
+    const n = o.n, gr = el("g", { class: "rnode d" + o.depth, transform: "translate(" + o.x.toFixed(1) + "," + o.y.toFixed(1) + ")" }, svg);
+    el("title", {}, gr).textContent = n.nom + (n.niveau ? " : level " + n.niveau + " out of 5" : (n.detail ? " : " + n.detail : ""));
+    el("rect", { x: -o.w / 2, y: -o.h / 2, width: o.w, height: o.h, class: "nb" }, gr);
+    const txt = (t, y, cls) => { const e = el("text", { y, dy: ".35em", class: cls || "" }, gr); e.textContent = t; };
+    if (o.depth === 1) txt(n.nom, 0);
+    else if (n.niveau) {
+      txt(n.nom, -8);
+      for (let k = 0; k < 5; k++) el("rect", { x: -4, y: -4, width: 8, height: 8, transform: "translate(" + ((k - 2) * 13) + ",13) rotate(45)", class: "pip" + (k < n.niveau ? " on" : "") }, gr);
+    } else if (n.detail) { txt(n.nom, -7); txt(n.detail, 12, "dt"); }
+    else txt(n.nom, 0);
+  });
+  const core = el("g", { transform: "translate(" + CX + "," + CY + ")" }, svg);
+  el("circle", { r: 62, class: "core-ring" }, core);
+  el("circle", { r: 54, fill: "url(#coreGrad)", class: "core" }, core);
+  const words = PROFIL.nom.split(/\s+/).filter(Boolean);
+  words.forEach((w, i) => { const t = el("text", { y: (i - (words.length - 1) / 2) * 24, dy: ".35em", class: "core-text" }, core); t.textContent = w; });
+}
+buildRadial();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildRadial);
+
+/* Chroniques */
+$("#timeline").innerHTML = PARCOURS.map(c =>
+  '<li><p class="t-date">' + esc(c.date) + '</p><p class="t-title">' + esc(c.titre) + "</p><p>" + esc(c.texte) + "</p></li>").join("");
+
+/* Fenêtre d'un projet */
+function mediaHtml(m) {
+  const cap = m.legende ? "<figcaption>" + esc(m.legende) + "</figcaption>" : "";
+  if (m.type === "youtube") {
+    const id = encodeURIComponent(m.id);
+    return '<figure class="m-wide"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/' + id + '" title="' + esc(m.legende || "Project video") +
+      '" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>' + cap +
+      '<p class="alt"><a href="https://www.youtube.com/watch?v=' + id + '" target="_blank" rel="noopener">Open the video on YouTube</a></p></figure>';
+  }
+  if (m.type === "video") {
+    return '<figure class="m-wide"><div class="frame"><video controls preload="metadata" playsinline' + (m.poster ? ' poster="' + esc(m.poster) + '"' : "") +
+      ' src="' + esc(m.src) + '"></video></div>' + cap + "</figure>";
+  }
+  return '<figure><button class="shot" type="button" data-src="' + esc(m.src) + '" data-cap="' + esc(m.legende || "") + '" aria-label="Enlarge the image">' +
+    '<img src="' + esc(m.src) + '" alt="' + esc(m.legende || "Project screenshot") + '" loading="lazy"></button>' + cap + "</figure>";
+}
+let lastFocus = null;
+function openQuest(id) {
+  const p = PROJETS.find(x => x.id === id); if (!p) return;
+  lastFocus = document.activeElement;
+  const infos = [["Role", p.role], ["Team", p.equipe], ["Duration", p.duree], ["Tools", (p.outils || []).join(", ")]].filter(x => x[1]);
+  $("#sheetBody").innerHTML =
+    '<p class="q-meta">' + esc([p.type, p.annee].filter(Boolean).join(" · ")) + '</p><h3 id="sheetTitle">' + esc(p.titre) + "</h3>" +
+    (infos.length ? '<dl class="infos">' + infos.map(x => "<div><dt>" + esc(x[0]) + "</dt><dd>" + esc(x[1]) + "</dd></div>").join("") + "</dl>" : "") +
+    (p.texte || []).map(t => "<p>" + esc(t) + "</p>").join("") +
+    '<div class="medias">' + (p.medias || []).map(mediaHtml).join("") + "</div>" +
+    '<div class="links">' + (p.liens || []).map(l => '<a class="btn btn-red" href="' + esc(l.url) + '"' + (l.download ? ' download="' + esc(l.download === true ? "" : l.download) + '"' : ' target="_blank" rel="noopener"') + ">" + esc(l.label) + "</a>").join("") + "</div>";
+  $("#overlay").hidden = false;
+  $("#overlay").scrollTop = 0;
+  document.documentElement.classList.add("lock");
+  $("#closeSheet").focus();
+}
+function closeQuest() {
+  $("#sheetBody").innerHTML = ""; /* arrête aussi les vidéos en lecture */
+  $("#overlay").hidden = true;
+  document.documentElement.classList.remove("lock");
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$("#questSections").addEventListener("click", e => {
+  const b = e.target.closest("button[data-id]"); if (b) openQuest(b.dataset.id);
+});
+$("#closeSheet").addEventListener("click", closeQuest);
+$("#overlay").addEventListener("click", e => { if (e.target === $("#overlay")) closeQuest(); });
+document.addEventListener("click", e => {
+  const s = e.target.closest(".shot"); if (!s) return;
+  $("#lbImg").src = s.dataset.src; $("#lbImg").alt = s.dataset.cap || "Project screenshot";
+  $("#lbCap").textContent = s.dataset.cap;
+  $("#lightbox").hidden = false;
+});
+$("#lightbox").addEventListener("click", () => { $("#lightbox").hidden = true; });
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (!$("#lightbox").hidden) $("#lightbox").hidden = true;
+  else if (!$("#overlay").hidden) closeQuest();
+});
+
+/* =====================================================================
+   NAVIGATION ENTRE LES SALLES + TRANSITION « SCEAU BRISÉ »
+   1. Un sceau de cire à la lettre de la salle apparaît sous le clic.
+   2. Il éclate : braises, éclats de cire, étincelles, onde de choc dorée.
+   3. L'ancienne salle se brise vers l'avant (zoom) pendant que la nouvelle
+      s'ouvre en cercle depuis le point d'impact.
+   ===================================================================== */
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let current = "accueil";
+let busy = false;
+
+function updateNav() {
+  $$("#nav a").forEach(a => {
+    if (a.dataset.view === current) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+}
+function setHash(name) { try { location.hash = name; } catch (e) { /* ignoré */ } }
+function pointOf(e, el) {
+  if (e && e.detail > 0 && (e.clientX || e.clientY)) return { x: e.clientX, y: e.clientY };
+  const r = el.getBoundingClientRect();
+  return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+}
+function focusHead(view) {
+  const h = view.querySelector("h1,h2");
+  if (h) h.focus({ preventScroll: true });
+}
+
+function blobPath(cx, cy, r, n) {
+  const pts = [];
+  for (let i = 0; i < n; i++) {
+    const a = i / n * Math.PI * 2, rr = r * (0.9 + Math.random() * 0.18);
+    pts.push([cx + Math.cos(a) * rr, cy + Math.sin(a) * rr]);
+  }
+  let d = "";
+  for (let i = 0; i < n; i++) {
+    const p = pts[i], q = pts[(i + 1) % n], m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2];
+    if (i === 0) { const l = pts[n - 1]; d += "M" + (l[0] + p[0]) / 2 + " " + (l[1] + p[1]) / 2; }
+    d += "Q" + p[0] + " " + p[1] + " " + m[0] + " " + m[1];
+  }
+  return d + "Z";
+}
+function sealSvg(glyph, uid) {
+  const gid = "wax" + (uid || "");
+  return '<svg viewBox="0 0 120 120" width="120" height="120">' +
+    '<defs><radialGradient id="' + gid + '" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#d4573d"/><stop offset=".6" stop-color="#c23b22"/><stop offset="1" stop-color="#8f2614"/></radialGradient></defs>' +
+    '<path d="' + blobPath(60, 60, 54, 12) + '" fill="url(#' + gid + ')"/>' +
+    '<circle cx="60" cy="60" r="38" fill="none" stroke="rgba(233,220,188,.4)" stroke-width="2"/>' +
+    '<text x="60" y="80" text-anchor="middle" font-family="UnifrakturCook,serif" font-weight="700" font-size="58" fill="#f6dc9c">' + esc(glyph) + "</text></svg>";
+}
+
+function burst(x, y) {
+  const cv = $("#fxCanvas"), ctx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = Math.round(innerWidth * dpr); cv.height = Math.round(innerHeight * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const ps = [];
+  const add = (n, kind, fn) => {
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2;
+      ps.push(Object.assign({ x, y, kind, age: 0, rot: Math.random() * 6.28, vr: (Math.random() - .5) * .5 }, fn(a)));
+    }
+  };
+  add(70, "ember", a => { const s = 2 + Math.random() * 10; return { vx: Math.cos(a) * s, vy: Math.sin(a) * s - 1.5, size: 1.5 + Math.random() * 3.5, life: 700 + Math.random() * 700, hue: 28 + Math.random() * 30 }; });
+  add(34, "wax", a => { const s = 3 + Math.random() * 8; return { vx: Math.cos(a) * s, vy: Math.sin(a) * s - 2, size: 5 + Math.random() * 8, life: 800 + Math.random() * 500, hue: Math.random() }; });
+  add(40, "spark", a => { const s = 6 + Math.random() * 14; return { vx: Math.cos(a) * s, vy: Math.sin(a) * s, size: 1.2, life: 350 + Math.random() * 350 }; });
+  let last = performance.now();
+  function tick(now) {
+    const dt = Math.min(40, now - last) / 16.67; last = now;
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    let alive = 0;
+    for (const p of ps) {
+      p.age += dt * 16.67;
+      if (p.age >= p.life) continue;
+      alive++;
+      const k = 1 - p.age / p.life;
+      if (p.kind === "ember") { p.vx *= Math.pow(.96, dt); p.vy = p.vy * Math.pow(.96, dt) - .03 * dt; }
+      else if (p.kind === "wax") { p.vx *= Math.pow(.97, dt); p.vy = p.vy * Math.pow(.97, dt) + .28 * dt; p.rot += p.vr * dt; }
+      else { p.vx *= Math.pow(.92, dt); p.vy *= Math.pow(.92, dt); }
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      if (p.kind === "ember") {
+        ctx.globalCompositeOperation = "lighter";
+        ctx.fillStyle = "hsla(" + p.hue + ",95%,60%," + (k * .25) + ")";
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size * 3, 0, 6.283); ctx.fill();
+        ctx.fillStyle = "hsla(" + (p.hue + 8) + ",100%,70%," + k + ")";
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size * k + .4, 0, 6.283); ctx.fill();
+      } else if (p.kind === "wax") {
+        ctx.globalCompositeOperation = "source-over";
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.min(1, k * 1.6);
+        ctx.fillStyle = p.hue > .5 ? "#c23b22" : "#a02c17";
+        ctx.beginPath();
+        ctx.moveTo(-p.size, -p.size * .4); ctx.lineTo(p.size * .8, -p.size * .7);
+        ctx.lineTo(p.size * .5, p.size * .6); ctx.lineTo(-p.size * .6, p.size * .8);
+        ctx.closePath(); ctx.fill(); ctx.restore();
+      } else {
+        ctx.globalCompositeOperation = "lighter";
+        ctx.strokeStyle = "rgba(255,214,130," + k + ")"; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * 2.2, p.y - p.vy * 2.2); ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+    if (alive) requestAnimationFrame(tick); else ctx.clearRect(0, 0, innerWidth, innerHeight);
+  }
+  requestAnimationFrame(tick);
+}
+
+async function go(name, pt) {
+  const to = $("#v-" + name);
+  if (!to || name === current || busy) return;
+  const from = $("#v-" + current), meta = SALLES.find(s => s.id === name);
+  current = name; setHash(name); updateNav();
+
+  if (reduceMotion.matches) {
+    from.hidden = true; to.hidden = false; window.scrollTo(0, 0);
+    to.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 180 });
+    focusHead(to);
+    return;
+  }
+
+  busy = true;
+  const o = pt || { x: innerWidth / 2, y: innerHeight / 2 };
+  const seal = $("#fxSeal"), ring = $("#fxRing"), flash = $("#fxFlash");
+  try {
+    /* 1. Le sceau apparaît */
+    seal.innerHTML = sealSvg(meta ? meta.glyph : "✠");
+    seal.style.display = "block"; seal.style.left = (o.x - 60) + "px"; seal.style.top = (o.y - 60) + "px";
+    await seal.animate([
+      { transform: "scale(.2) rotate(-25deg)", opacity: 0 },
+      { transform: "scale(1.1) rotate(4deg)", opacity: 1, offset: .7 },
+      { transform: "scale(1) rotate(0deg)", opacity: 1 }
+    ], { duration: 260, easing: "cubic-bezier(.2,.9,.3,1.1)", fill: "forwards" }).finished;
+    await sleep(50);
+
+    /* 2. Il éclate */
+    burst(o.x, o.y);
+    seal.animate([
+      { transform: "scale(1)", opacity: 1, filter: "brightness(1)" },
+      { transform: "scale(1.7)", opacity: 0, filter: "brightness(3)" }
+    ], { duration: 220, easing: "ease-out", fill: "forwards" }).finished.then(() => { seal.style.display = "none"; });
+    flash.style.background = "radial-gradient(circle at " + o.x + "px " + o.y + "px, rgba(255,222,150,.6), rgba(226,120,40,.18) 38%, transparent 70%)";
+    flash.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 440, easing: "ease-out" });
+    ring.style.left = o.x + "px"; ring.style.top = o.y + "px";
+    ring.animate([
+      { transform: "translate(-50%,-50%) scale(.02)", opacity: 1 },
+      { transform: "translate(-50%,-50%) scale(.9)", opacity: 0 }
+    ], { duration: 780, easing: "cubic-bezier(.1,.7,.3,1)" });
+
+    /* L'ancienne salle se fige à l'écran, tremble, puis se brise vers l'avant */
+    const r = from.getBoundingClientRect();
+    Object.assign(from.style, {
+      position: "fixed", left: r.left + "px", top: r.top + "px", width: r.width + "px", margin: "0",
+      zIndex: "1", pointerEvents: "none", transformOrigin: (o.x - r.left) + "px " + (o.y - r.top) + "px"
+    });
+    const zoomOut = from.animate([
+      { transform: "scale(1)", opacity: 1, filter: "blur(0px) brightness(1)" },
+      { transform: "translate(-6px,3px) scale(1.035)", opacity: 1, filter: "blur(0px) brightness(1.5)", offset: .12 },
+      { transform: "translate(5px,-4px) scale(1.07)", opacity: .95, filter: "blur(1px) brightness(1.2)", offset: .24 },
+      { transform: "translate(0,0) scale(1.7)", opacity: 0, filter: "blur(8px) brightness(.8)" }
+    ], { duration: 640, easing: "cubic-bezier(.45,0,.8,.4)", fill: "forwards" });
+
+    /* 3. La nouvelle salle s'ouvre en cercle depuis le point d'impact */
+    await sleep(90);
+    to.hidden = false; window.scrollTo(0, 0);
+    const t = to.getBoundingClientRect();
+    const X = o.x - t.left, Y = o.y - t.top;
+    const R = Math.hypot(Math.max(X, t.width - X), Math.max(Y, t.height - Y)) + 24;
+    Object.assign(to.style, { position: "relative", zIndex: "2", transformOrigin: X + "px " + Y + "px" });
+    await to.animate([
+      { clipPath: "circle(0px at " + X + "px " + Y + "px)", transform: "scale(.88)", opacity: .5 },
+      { clipPath: "circle(" + R + "px at " + X + "px " + Y + "px)", transform: "scale(1)", opacity: 1 }
+    ], { duration: 820, easing: "cubic-bezier(.2,.7,.2,1)" }).finished;
+
+    zoomOut.cancel();
+    from.hidden = true; from.removeAttribute("style");
+    to.removeAttribute("style");
+    focusHead(to);
+  } finally {
+    seal.style.display = "none";
+    busy = false;
+  }
+}
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-view]"); if (!t) return;
+  e.preventDefault();
+  go(t.dataset.view, pointOf(e, t));
+});
+addEventListener("hashchange", () => {
+  const n = location.hash.slice(1) || "accueil";
+  if (n !== current && $("#v-" + n)) go(n);
+});
+
+/* Ouverture directe d'une salle si le lien contient son nom (ex. …#quetes) */
+(function initFromHash() {
+  const n = location.hash.slice(1);
+  if (SALLES.some(s => s.id === n)) {
+    $("#v-accueil").hidden = true; $("#v-" + n).hidden = false; current = n;
+  }
+  updateNav();
+})();
+</script>
+
+</body>
+</html>
