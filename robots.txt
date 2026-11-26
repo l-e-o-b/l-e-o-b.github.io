@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://l-e-o-b.github.io/sitemap.xml
