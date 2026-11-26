@@ -158,7 +158,28 @@ h2{font:700 clamp(1.6rem,4.2vw,2.4rem)/1.15 var(--f-head);color:var(--parchment)
 .quest.st-a-faire .q-meta{color:var(--todo)}
 .quest.st-a-faire .chip{border-color:var(--todo);color:var(--todo)}
 
-/* Arbre de compétences */
+/* Arbre de compétences en étoile */
+.radial-wrap{overflow:hidden}
+.radial{display:block;width:100%;height:auto;max-width:1000px;margin:0 auto}
+.radial .ring{fill:none;stroke:var(--gold-dim);stroke-opacity:.3;stroke-dasharray:3 8}
+.radial .edge{stroke:var(--gold-dim);stroke-width:1.5;fill:none}
+.radial .e1{stroke:var(--gold);stroke-width:2.4}
+.radial .nb{fill:var(--stone);stroke:var(--gold-dim);stroke-width:1}
+.radial .core{stroke:var(--gold);stroke-width:2}
+.radial .core-ring{fill:none;stroke:var(--gold-dim);stroke-width:1}
+.radial .core-text{font-family:var(--f-title);font-size:22px;font-weight:700;fill:var(--parchment);text-anchor:middle}
+.rnode text{font-family:var(--f-body);font-size:15px;fill:var(--text);text-anchor:middle}
+.rnode .dt{font-size:12px;fill:var(--muted)}
+.rnode.d1 .nb{fill:var(--stone-2);stroke:var(--gold)}
+.rnode.d1 text{font-family:var(--f-head);font-weight:700;font-size:12px;letter-spacing:.15em;fill:var(--gold)}
+.rnode.max .nb{stroke:var(--glow);stroke-width:1.6;filter:drop-shadow(0 0 8px rgba(232,183,90,.55))}
+.rnode:hover .nb{stroke:var(--glow)}
+.pip{fill:none;stroke:var(--gold);stroke-width:1.2}
+.pip.on{fill:var(--gold)}
+.tree-wrap{display:none}
+@media (max-width:760px){.radial-wrap{display:none}.tree-wrap{display:block}}
+
+/* Arbre vertical (téléphone) */
 .tree-wrap{overflow-x:auto;padding:.6rem .2rem 1rem}
 .tree,.tree ul{list-style:none;margin:0;padding:0}
 .tree{--line:var(--gold-dim)}
@@ -346,6 +367,7 @@ footer{border-top:1px solid var(--gold-dim);padding-block:2rem 3rem;text-align:c
       <button class="back" type="button" data-view="accueil">← Retour au château</button>
       <h2 tabindex="-1">Arbre de compétences</h2>
       <div class="rule" aria-hidden="true">◆</div>
+      <div class="radial-wrap"><svg id="radial" class="radial" viewBox="0 0 1000 800" role="group" aria-label="Arbre de compétences"></svg></div>
       <div class="tree-wrap"><ul class="tree" id="tree"></ul></div>
       <p class="legend">Chaque branche mène à ce que j'ai pu débloquer grâce à elle. Niveau de maîtrise : de 1 losange (apprenti) à 5 losanges (maître). Les compétences brillantes sont celles que je maîtrise le mieux.</p>
     </div>
@@ -580,19 +602,21 @@ const PROJETS = [
   }
 ];
 
-/* COMPETENCES : l'arbre. Chaque branche a des "enfants" (les compétences débloquées grâce à elle).
-   niveau de 1 à 5 (losanges) ; sans niveau, on peut afficher un texte avec detail. */
+/* COMPETENCES : l'arbre en étoile. Chaque branche part du centre et a des "enfants" (ce qu'elle débloque).
+   - angle     : direction de la branche en degrés (0 = droite, 90 = bas, 180 = gauche, 270 = haut).
+   - ouverture : largeur de l'éventail occupé par la branche, en degrés.
+   - niveau de 1 à 5 (losanges) ; sans niveau, on peut afficher un texte avec detail. */
 const COMPETENCES = [
-  { nom: "Programmation", enfants: [
+  { nom: "Programmation", angle: 225, ouverture: 120, enfants: [
     { nom: "C++", niveau: 3, enfants: [{ nom: "SFML", niveau: 3 }] },
     { nom: "C#", niveau: 3, enfants: [{ nom: "Unity", niveau: 2 }] }
   ] },
-  { nom: "Outils", enfants: [{ nom: "Git et GitHub", niveau: 4 }] },
-  { nom: "Qualités", enfants: [
+  { nom: "Outils", angle: 285, ouverture: 40, enfants: [{ nom: "Git et GitHub", niveau: 4 }] },
+  { nom: "Qualités", angle: 0, ouverture: 110, enfants: [
     { nom: "Autonomie" }, { nom: "Esprit d'équipe" }, { nom: "Rigueur" },
     { nom: "Persévérance" }, { nom: "Sens de l'observation" }, { nom: "Polyvalence" }
   ] },
-  { nom: "Langues", enfants: [
+  { nom: "Langues", angle: 120, ouverture: 80, enfants: [
     { nom: "Français", detail: "langue maternelle" },
     { nom: "Anglais", detail: "A2-B1" }
   ] }
@@ -744,6 +768,69 @@ function nodeHtml(n, depth) {
   return '<li><div class="' + cls + '"><span class="nm">' + esc(n.nom) + "</span>" + extra + "</div>" + kids + "</li>";
 }
 $("#tree").innerHTML = nodeHtml({ nom: PROFIL.nom, enfants: COMPETENCES }, 0);
+
+/* Arbre en étoile : un point central d'où partent les branches */
+function buildRadial() {
+  const svg = $("#radial"); if (!svg) return;
+  const NS = "http://www.w3.org/2000/svg", CX = 500, CY = 400, R = d => 130 + 120 * (d - 1);
+  const ctx = document.createElement("canvas").getContext("2d");
+  const meas = (txt, font, ls) => { ctx.font = font; return ctx.measureText(txt).width + (ls || 0) * txt.length; };
+  const el = (name, attrs, parent) => { const e = document.createElementNS(NS, name); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const BODY = "'EB Garamond', Georgia, serif", HEAD = "Cinzel, Georgia, serif";
+  const leaves = n => (n.enfants && n.enfants.length) ? n.enfants.reduce((a, c) => a + leaves(c), 0) : 1;
+  const place = (n, a0, a1) => {
+    const kids = n.enfants || [];
+    if (!kids.length) { n._a = (a0 + a1) / 2; return; }
+    const total = leaves(n); let cur = a0;
+    kids.forEach(c => { const w = (a1 - a0) * leaves(c) / total; place(c, cur, cur + w); cur += w; });
+    n._a = (kids[0]._a + kids[kids.length - 1]._a) / 2;
+  };
+  COMPETENCES.forEach((b, i) => {
+    if (b.angle === undefined) { b.angle = i * 360 / COMPETENCES.length - 90; b.ouverture = 360 / COMPETENCES.length * 0.8; }
+    place(b, b.angle - (b.ouverture || 40) / 2, b.angle + (b.ouverture || 40) / 2);
+  });
+  const size = (n, depth) => {
+    if (depth === 1) return { w: meas(n.nom.toUpperCase(), "700 12px " + HEAD, 1.8) + 30, h: 32 };
+    const nm = meas(n.nom, "500 15px " + BODY);
+    if (n.niveau) return { w: Math.max(nm, 66) + 28, h: 48 };
+    if (n.detail) return { w: Math.max(nm, meas(n.detail, "400 12px " + BODY)) + 28, h: 46 };
+    return { w: nm + 28, h: 32 };
+  };
+  const nodes = [], edges = [];
+  const walk = (n, depth, from) => {
+    const a = n._a * Math.PI / 180, r = R(depth), x = CX + r * Math.cos(a), y = CY + r * Math.sin(a);
+    nodes.push(Object.assign({ n, depth, x, y }, size(n, depth)));
+    edges.push({ from, to: [x, y], depth });
+    (n.enfants || []).forEach(c => walk(c, depth + 1, [x, y]));
+  };
+  COMPETENCES.forEach(b => walk(b, 1, [CX, CY]));
+
+  svg.innerHTML = "";
+  const defs = el("defs", {}, svg);
+  const g = el("radialGradient", { id: "coreGrad", cx: "35%", cy: "30%", r: "80%" }, defs);
+  el("stop", { offset: "0", "stop-color": "#b9475a" }, g); el("stop", { offset: ".6", "stop-color": "#8e2f3a" }, g); el("stop", { offset: "1", "stop-color": "#5a1d28" }, g);
+  [1, 2, 3].forEach(d => el("circle", { cx: CX, cy: CY, r: R(d), class: "ring" }, svg));
+  edges.forEach(e => el("line", { x1: e.from[0], y1: e.from[1], x2: e.to[0], y2: e.to[1], class: "edge e" + e.depth }, svg));
+  nodes.forEach(o => {
+    const n = o.n, gr = el("g", { class: "rnode d" + o.depth + (n.niveau >= 4 ? " max" : ""), transform: "translate(" + o.x.toFixed(1) + "," + o.y.toFixed(1) + ")" }, svg);
+    el("title", {}, gr).textContent = n.nom + (n.niveau ? " : niveau " + n.niveau + " sur 5" : (n.detail ? " : " + n.detail : ""));
+    el("rect", { x: -o.w / 2, y: -o.h / 2, width: o.w, height: o.h, class: "nb" }, gr);
+    const txt = (t, y, cls) => { const e = el("text", { y, dy: ".35em", class: cls || "" }, gr); e.textContent = t; };
+    if (o.depth === 1) txt(n.nom.toUpperCase(), 0);
+    else if (n.niveau) {
+      txt(n.nom, -8);
+      for (let k = 0; k < 5; k++) el("rect", { x: -4, y: -4, width: 8, height: 8, transform: "translate(" + ((k - 2) * 13) + ",13) rotate(45)", class: "pip" + (k < n.niveau ? " on" : "") }, gr);
+    } else if (n.detail) { txt(n.nom, -7); txt(n.detail, 12, "dt"); }
+    else txt(n.nom, 0);
+  });
+  const core = el("g", { transform: "translate(" + CX + "," + CY + ")" }, svg);
+  el("circle", { r: 62, class: "core-ring" }, core);
+  el("circle", { r: 54, fill: "url(#coreGrad)", class: "core" }, core);
+  const words = PROFIL.nom.split(/\s+/).filter(Boolean);
+  words.forEach((w, i) => { const t = el("text", { y: (i - (words.length - 1) / 2) * 24, dy: ".35em", class: "core-text" }, core); t.textContent = w; });
+}
+buildRadial();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildRadial);
 
 /* Chroniques */
 $("#timeline").innerHTML = PARCOURS.map(c =>
