@@ -10,23 +10,23 @@
 <style>
 /* Concept : un manuscrit enluminé. Page de parchemin et encre noire, bandeau bleu roi et feuille d'or, vermillon pour les sceaux et les initiales, vert prairie pour ce qui est accompli. Titres épiques (Cinzel Decorative), nom et lettrines en lettre gothique, texte en Garamond. Chaque partie est une salle à part : on y entre en brisant un sceau de cire. */
 :root{
-  --page:#cfbb8c;
-  --page-2:#bfa874;
-  --card:#efe3c2;
+  --page:#a9bba0;
+  --page-2:#97ab8e;
+  --card:#eaeee3;
   --ink:#1d1b22;
-  --ink-2:#4b4651;
+  --ink-2:#363a3c;
   --royal:#1f3b8c;
   --royal-deep:#14275f;
   --royal-soft:#dfe5f4;
   --gold:#b98a2e;
-  --gold-text:#6a4a10;
+  --gold-text:#5a3f0b;
   --gold-leaf:#e0b24a;
   --vermillon:#c23b22;
   --vermillon-deep:#8f2614;
   --prairie:#3f7d45;
   --prairie-deep:#2f6334;
   --todo:#6c6f7d;
-  --cream:#f8f1de;
+  --cream:#f2f5ec;
   --f-title:'UnifrakturCook','Old English Text MT',Georgia,serif;
   --f-deco:'Cinzel Decorative','Cinzel','Trajan Pro',Georgia,serif;
   --f-head:'Cinzel','Trajan Pro',Georgia,serif;
@@ -86,7 +86,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 /* Les six portes */
 .doors-sec{padding-block:2rem 1.5rem}
 .doors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
-.door{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%;height:100%;padding:2.4rem 1rem 1.5rem;text-align:center;font:inherit;color:var(--ink);cursor:pointer;background:linear-gradient(180deg,var(--card),#d3d9a9);border:2px solid var(--gold);border-radius:50% 50% 4px 4px / 36% 36% 4px 4px;box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(185,138,46,.6),0 8px 20px rgba(70,50,15,.14)}
+.door{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%;height:100%;padding:2.4rem 1rem 1.5rem;text-align:center;font:inherit;color:var(--ink);cursor:pointer;background:linear-gradient(180deg,var(--card),#c9dbc0);border:2px solid var(--gold);border-radius:50% 50% 4px 4px / 36% 36% 4px 4px;box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(185,138,46,.6),0 8px 20px rgba(25,45,30,.14)}
 .door:hover{border-color:var(--royal);box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(31,59,140,.55),0 12px 28px rgba(31,59,140,.25)}
 .door .seal{display:block;width:92px;height:92px;margin-bottom:.3rem}
 .door .seal svg{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 7px rgba(90,30,10,.4))}
@@ -99,7 +99,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 @media (max-width:540px){.doors{grid-template-columns:minmax(0,1fr)}}
 
 /* Vélin : cartes claires cerclées d'or */
-.parch{background:var(--card);color:var(--ink);border:1px solid var(--gold);outline:1px solid rgba(185,138,46,.55);outline-offset:-7px;box-shadow:0 10px 26px rgba(70,50,15,.16)}
+.parch{background:var(--card);color:var(--ink);border:1px solid var(--gold);outline:1px solid rgba(185,138,46,.55);outline-offset:-7px;box-shadow:0 10px 26px rgba(25,45,30,.16)}
 
 /* Prologue */
 .pro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2.5rem;align-items:start}
@@ -122,7 +122,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font:700 .62rem/1 var(--f-head);letter-spacing:.1em;text-transform:uppercase;padding:.3rem .5rem;border:1px solid var(--prairie-deep);color:var(--prairie-deep)}
 .q-more{font:700 .72rem/1 var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--vermillon-deep);margin-top:.3rem}
-@media (prefers-reduced-motion:no-preference){.quest{transition:transform .18s ease,box-shadow .18s ease}button.quest:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(70,50,15,.28)}}
+@media (prefers-reduced-motion:no-preference){.quest{transition:transform .18s ease,box-shadow .18s ease}button.quest:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(25,45,30,.28)}}
 .vide{color:var(--ink-2);font-style:italic}
 
 /* Quêtes par statut */
@@ -137,7 +137,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 .badge{position:absolute;top:.8rem;left:.8rem;z-index:2;display:inline-flex;align-items:center;gap:.45rem;font:700 .66rem/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase;padding:.5rem .65rem;border:1px solid}
 .st-accomplie .badge{background:var(--prairie);color:#f4fbf3;border-color:var(--prairie-deep)}
 .st-en-cours .badge{background:var(--gold-leaf);color:#1b1405;border-color:var(--gold)}
-.st-a-faire .badge{background:#e8e2d2;color:var(--ink-2);border-color:var(--todo)}
+.st-a-faire .badge{background:#e3e8de;color:var(--ink-2);border-color:var(--todo)}
 .badge .pulse{width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
 @media (prefers-reduced-motion:no-preference){.badge .pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.25}}}
 .quest.st-accomplie{border-color:var(--prairie)}
@@ -150,7 +150,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 .prog{display:grid;gap:.35rem;font:700 .64rem/1 var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-leaf)}
 .prog span{display:block;height:7px;border:1px solid rgba(224,178,74,.6);background:rgba(255,255,255,.12)}
 .prog i{display:block;height:100%;background:var(--gold-leaf)}
-.quest.st-a-faire{background:rgba(191,168,116,.45);color:var(--ink-2);border:1px dashed var(--todo);box-shadow:none}
+.quest.st-a-faire{background:rgba(151,171,142,.5);color:var(--ink-2);border:1px dashed var(--todo);box-shadow:none}
 .quest.st-a-faire img{filter:grayscale(1) contrast(.85);opacity:.55;border-bottom:1px dashed var(--todo)}
 .quest.st-a-faire .q-title{color:var(--ink)}
 .quest.st-a-faire .q-meta{color:var(--todo)}
@@ -226,7 +226,7 @@ h2{font:700 clamp(1.7rem,4.4vw,2.5rem)/1.15 var(--f-deco);color:var(--royal-deep
 .messager .contact{max-width:none}
 .cvfig{margin:0}
 .cvfig figcaption{font:700 .72rem/1 var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.8rem}
-.cvfig .shot{border:1px solid var(--gold);background:var(--card);box-shadow:0 10px 26px rgba(70,50,15,.2)}
+.cvfig .shot{border:1px solid var(--gold);background:var(--card);box-shadow:0 10px 26px rgba(25,45,30,.2)}
 .cvfig .shot img{aspect-ratio:auto;height:auto;object-fit:contain}
 #stage{padding-bottom:3rem}
 @media (max-width:900px){.messager{grid-template-columns:minmax(0,1fr)}}
